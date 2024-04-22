@@ -32,13 +32,20 @@ const elements = {
   deleteBoardBtn: document.getElementById('deleteBoardBtn'),
 // Task elements
 // Modal elements
-newTaskModalWindow: document.getElementById('new-task-modal-window'),
+  newTaskModalWindow: document.getElementById('new-task-modal-window'),
   modalTitleInput: document.getElementById('title-input'),
   modalDescInput: document.getElementById('desc-input'),
   modalSelectStatus: document.getElementById('select-status'),
   createTaskBtn: document.getElementById('create-task-btn'),
   cancelAddTaskBtn: document.getElementById('cancel-add-task-btn'),
-// Theme elements
+// Edit Task Modal elements
+  editTaskModalWindow: document.querySelector('.edit-task-modal-window'),
+  editTaskTitleInput: document.getElementById('edit-task-title-input'),
+  editTaskDescInput: document.getElementById('edit-task-desc-input'),
+  editSelectStatus: document.getElementById('edit-select-status'),
+  saveTaskChangesBtn: document.getElementById('save-task-changes-btn'),
+  cancelEditBtn: document.getElementById('cancel-edit-btn'),
+  deleteTaskBtn: document.getElementById('delete-task-btn'),
 // Create new task button
 }
 
