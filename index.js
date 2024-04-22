@@ -32,6 +32,12 @@ const elements = {
   deleteBoardBtn: document.getElementById('deleteBoardBtn'),
 // Task elements
 // Modal elements
+newTaskModalWindow: document.getElementById('new-task-modal-window'),
+  modalTitleInput: document.getElementById('title-input'),
+  modalDescInput: document.getElementById('desc-input'),
+  modalSelectStatus: document.getElementById('select-status'),
+  createTaskBtn: document.getElementById('create-task-btn'),
+  cancelAddTaskBtn: document.getElementById('cancel-add-task-btn'),
 // Theme elements
 // Create new task button
 }
