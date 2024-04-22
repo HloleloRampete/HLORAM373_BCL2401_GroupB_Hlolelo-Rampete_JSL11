@@ -19,7 +19,21 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
-
+// Navigation elements
+  sideBar: document.getElementById('side-bar-div'),
+  sideBarToggleBtn: document.getElementById('hide-side-bar-btn'),
+  showSideBarBtn: document.getElementById('show-side-bar-btn'),
+  boardsNavLinksDiv: document.getElementById('boards-nav-links-div'),
+  headerBoardName: document.getElementById('header-board-name'),
+  dropdownBtn: document.getElementById('dropdownBtn'),
+  dropDownIcon: document.getElementById('dropDownIcon'),
+  addNewTaskBtn: document.getElementById('add-new-task-btn'),
+  editBoardBtn: document.getElementById('edit-board-btn'),
+  deleteBoardBtn: document.getElementById('deleteBoardBtn'),
+// Task elements
+// Modal elements
+// Theme elements
+// Create new task button
 }
 
 let activeBoard = ""
