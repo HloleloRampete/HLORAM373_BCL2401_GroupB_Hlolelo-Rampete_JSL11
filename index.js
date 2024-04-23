@@ -59,7 +59,7 @@ function fetchAndDisplayBoardsAndTasks() {
   displayBoards(boards);
   if (boards.length > 0) {
     const localStorageBoard = JSON.parse(localStorage.getItem("activeBoard"))
-    activeBoard = localStorageBoard ? localStorageBoard :  boards[0]; // Changed the semi-colon to colons 
+    activeBoard = localStorageBoard ? localStorageBoard :  boards[0]; // Changed the semi-colon to colons to fix syntax error
     elements.headerBoardName.textContent = activeBoard
     styleActiveBoard(activeBoard)
     refreshTasksUI();
@@ -75,17 +75,17 @@ function displayBoards(boards) {
     const boardElement = document.createElement("button");
     boardElement.textContent = board;
     boardElement.classList.add("board-btn");
-    boardElement.click()  { 
+    boardElement.addEventListener("click", function() { // Added an anonymous function here and wrapped the event handler code with the function 
+      /* Instead of assigning the click event handler 
+    inside the forEach loop, you are immediately invoking the function. */
       elements.headerBoardName.textContent = board;
       filterAndDisplayTasksByBoard(board);
       activeBoard = board //assigns active board
       localStorage.setItem("activeBoard", JSON.stringify(activeBoard))
       styleActiveBoard(activeBoard)
-    };
+    });
     boardsContainer.appendChild(boardElement);
   });
-
-}
 
 // Filters tasks corresponding to the board name and displays them on the DOM.
 // TASK: Fix Bugs
