@@ -114,7 +114,7 @@ function filterAndDisplayTasksByBoard(boardName) {
       taskElement.setAttribute('data-task-id', task.id);
 
       // Listen for a click event on each task and open a modal
-      taskElement.click() => { // Added an Event listener and corrected the arrow function syntax
+      taskElement.addEventListener('click', () => { // Added an Event listener and corrected the arrow function syntax
         openEditTaskModal(task);
       });
 
