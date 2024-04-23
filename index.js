@@ -86,6 +86,8 @@ function displayBoards(boards) {
     });
     boardsContainer.appendChild(boardElement);
   });
+}
+  
 
 // Filters tasks corresponding to the board name and displays them on the DOM.
 // TASK: Fix Bugs
@@ -171,7 +173,7 @@ function addTaskToUI(task) {
 function setupEventListeners() {
   // Cancel editing task event listener
   const cancelEditBtn = document.getElementById('cancel-edit-btn');
-  cancelEditBtn.click() => toggleModal(false, elements.editTaskModal));
+  cancelEditBtn.addEventListener('click', () => toggleModal(false, elements.editTaskModal));
 
   // Cancel adding new task event listener
   const cancelAddTaskBtn = document.getElementById('cancel-add-task-btn');
