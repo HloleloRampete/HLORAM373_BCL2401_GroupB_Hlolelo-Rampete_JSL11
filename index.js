@@ -103,7 +103,7 @@ function displayBoards(boards) {
     const boardElement = document.createElement("button");
     boardElement.textContent = board;
     boardElement.classList.add("board-btn");
-    boardElement.addEventListener("click", () => { // Added an anonymous function here and wrapped the event handler code with the function 
+    boardElement.addEventListener('click', () => { // Added an anonymous function here and wrapped the event handler code with the function 
       /* Instead of assigning the click event handler 
     inside the forEach loop, you are immediately invoking the function. */
       elements.headerBoardName.textContent = board;
