@@ -307,7 +307,10 @@ function openEditTaskModal(task) {
   // Set task details in modal inputs
   elements.editTaskTitleInput.value = task.title;
   elements.editTaskDescInput.value = task.description;
-  elements.editSelectStatus.value = task.status;
+  const selectedStatus = elements.editSelectStatus.querySelector(`option[value="${task.status}"]`);
+  selectedStatus.selected = true;
+  toggleModal(true, elements.editTaskModal); // Shows the edit task modal using the toggleModal function
+
 
   // Get button elements from the task modal
   const saveTaskChangesBtn = document.getElementById('save-task-changes-btn');
