@@ -218,13 +218,19 @@ function setupEventListeners() {
   elements.showSideBarBtn.addEventListener('click', () => toggleSidebar(true));
 
   // Theme switch event listener
-  elements.themeSwitch.addEventListener('change', toggleTheme);
+  elements.themeSwitch.addEventListener('click', () => toggleTheme());
 
   // Show Add New Task Modal event listener
-  elements.createNewTaskBtn.addEventListener('click', () => {
+  elements.addNewTaskBtn.addEventListener('click', () => {
     toggleModal(true);
     elements.filterDiv.style.display = 'block'; // Also show the filter overlay
   });
+
+  elements.editBoardBtn.addEventListener('click', () => {
+    elements.editBoardDiv.classList.toggle("show");
+    elements.editBoardDiv.style.display = (elements.editBoardDiv.classList.contains("show")) ? 'flex' : 'none';
+  });
+
 
   // Add new task form submission event listener
   elements.modalWindow.addEventListener('submit',  (event) => {
@@ -247,7 +253,10 @@ function addTask(event) {
 
   //Assign user input to the task object
     const task = {
-      
+      title: elements.titleInput.value,
+      description: elements.descInput.value,
+      status: elements.selectStatus.value,
+      board: activeBoard,
     };
     const newTask = createNewTask(task);
     if (newTask) {
