@@ -163,16 +163,13 @@ function refreshTasksUI() {
 // Styles the active board by adding an active class
 // TASK: Fix Bugs
 function styleActiveBoard(boardName) {
-  [...document.querySelectorAll('.board-btn')].forEach(btn => { // the .forEach' method does not return a 'Nodelist'. Therefore, converted the NodeList to an array using the spread operator (...).
-    // The Element.add and Element.remove methods require a string argument representing the class name
-    if(btn.textContent === boardName) {
-      btn.classList.add('active') 
-    }
-    else {
-      btn.classList.remove('active'); 
-    }
+  [...document.querySelectorAll('.board-btn')].map((btn) => {
+    btn.classList.toggle('active', btn.textContent === boardName);
   });
+  showTasksProgress()
 }
+
+
 
 
 function addTaskToUI(task) {
