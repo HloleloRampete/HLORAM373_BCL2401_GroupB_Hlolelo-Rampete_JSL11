@@ -346,6 +346,13 @@ function saveTaskChanges(taskId) {
 
 
   // Create an object with the updated task details
+  const task = {
+    id: taskId,
+    title: editTaskTitleInput.value,
+    description: editTaskDescInput.value,
+    status: editSelectStatus.value,
+    board: activeBoard,
+  };
 
 
   // Update task using a hlper functoin
