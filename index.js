@@ -258,6 +258,8 @@ function addTask(event) {
       status: elements.selectStatus.value,
       board: activeBoard,
     };
+
+
     const newTask = createNewTask(task);
     if (newTask) {
       addTaskToUI(newTask);
@@ -270,7 +272,23 @@ function addTask(event) {
 
 
 function toggleSidebar(show) {
- 
+  elements.showSideBarBtn.classList.toggle("show", !show);
+  elements.showSideBarBtn.classList.toggle("fixed", !show);
+  elements.sideBar.classList.toggle("show", show);
+  localStorage.setItem('showSideBar', show);
+
+
+  const sideBarWidth = getElementWidth(elements.sideBar),
+  fixedDiv = elements.sideBar.querySelector("div");
+  fixedDiv.style.width = show ? sideBarWidth : 0;
+  fixedDiv.classList.toggle("fixed-sidebar", show);
+
+
+  document.getElementsByClassName("side-bar-bottom")[0].classList.toggle("fixed-bottom", show);
+
+
+  topHeaderSizing(show);
+
 }
 
 function toggleTheme() {
