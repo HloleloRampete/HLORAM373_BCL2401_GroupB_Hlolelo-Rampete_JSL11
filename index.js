@@ -1,5 +1,5 @@
 // TASK: import helper functions from utils
-import { getTasks, createNewTask, patchTask, putTask, deleteTask  } from "./utils/taskFunctions.js";
+import { getTasks, createNewTask, putTask, deleteTask } from './utils/taskFunctions.js';
 // TASK: import initialData
 import { initialData } from "./initialData.js";
 
@@ -19,34 +19,62 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
-// Navigation elements
-  sideBar: document.getElementById('side-bar-div'),
-  sideBarToggleBtn: document.getElementById('hide-side-bar-btn'),
-  showSideBarBtn: document.getElementById('show-side-bar-btn'),
-  boardsNavLinksDiv: document.getElementById('boards-nav-links-div'),
-  headerBoardName: document.getElementById('header-board-name'),
-  dropdownBtn: document.getElementById('dropdownBtn'),
-  dropDownIcon: document.getElementById('dropDownIcon'),
-  addNewTaskBtn: document.getElementById('add-new-task-btn'),
-  editBoardBtn: document.getElementById('edit-board-btn'),
-  deleteBoardBtn: document.getElementById('deleteBoardBtn'),
-// Task elements
-// Modal elements
-  newTaskModalWindow: document.getElementById('new-task-modal-window'),
-  modalTitleInput: document.getElementById('title-input'),
-  modalDescInput: document.getElementById('desc-input'),
-  modalSelectStatus: document.getElementById('select-status'),
-  createTaskBtn: document.getElementById('create-task-btn'),
-  cancelAddTaskBtn: document.getElementById('cancel-add-task-btn'),
-// Edit Task Modal elements
-  editTaskModalWindow: document.querySelector('.edit-task-modal-window'),
-  editTaskTitleInput: document.getElementById('edit-task-title-input'),
-  editTaskDescInput: document.getElementById('edit-task-desc-input'),
-  editSelectStatus: document.getElementById('edit-select-status'),
-  saveTaskChangesBtn: document.getElementById('save-task-changes-btn'),
-  cancelEditBtn: document.getElementById('cancel-edit-btn'),
-  deleteTaskBtn: document.getElementById('delete-task-btn'),
-// Create new task button
+// Navigation Sidebar
+sideBar: document.getElementById('side-bar-div'),
+logo: document.getElementById('logo'),
+boardsNavLinksDiv: document.getElementById('boards-nav-links-div'),
+headlineSidepanel: document.getElementById('headline-sidepanel'),
+hideSideBarBtn: document.getElementById('hide-side-bar-btn'),
+showSideBarBtn: document.getElementById('show-side-bar-btn'),
+themeSwitchDiv: document.getElementsByClassName('toggle-div')[0],
+themeSwitch: document.getElementById('switch'),
+iconDark: document.getElementById('icon-dark'),
+iconLight: document.getElementById('icon-light'),
+
+// Main Layout
+layout: document.getElementById('layout'),
+header: document.getElementById('header'),
+headerBoardName: document.getElementById('header-board-name'),
+dropDownBtn: document.getElementById('dropdownBtn'),
+dropDownIcon: document.getElementById('dropDownIcon'),
+addNewTaskBtn: document.getElementById('add-new-task-btn'),
+editBoardBtn: document.getElementById('edit-board-btn'),
+editBoardDiv: document.getElementById('editBoardDiv'),
+container: document.querySelector('.container'), // Using querySelector for class
+
+// Task Columns
+columnMainDiv: document.querySelector('.card-column-main'),
+columnDivs: document.querySelectorAll('.column-div'),
+todoColumn: document.querySelector('.column-div[data-status="todo"]'), // Using data attribute selector
+todoHeadDiv: document.getElementById('todo-head-div'),
+todoText: document.getElementById('toDoText'),
+todoTasksContainer: document.querySelector('.column-div[data-status="todo"] .tasks-container'), // Combining selectors
+doingColumn: document.querySelector('.column-div[data-status="doing"]'),
+doingHeadDiv: document.getElementById('doing-head-div'),
+doingText: document.getElementById('doingText'),
+doingTasksContainer: document.querySelector('.column-div[data-status="doing"] .tasks-container'),
+doneColumn: document.querySelector('.column-div[data-status="done"]'),
+doneHeadDiv: document.getElementById('done-head-div'),
+doneText: document.getElementById('doneText'),
+doneTasksContainer: document.querySelector('.column-div[data-status="done"] .tasks-container'),
+
+// New Task Modal
+modalWindow: document.getElementById('new-task-modal-window'),
+titleInput: document.getElementById('title-input'),
+descInput: document.getElementById('desc-input'),
+selectStatus: document.getElementById('select-status'),
+cancelAddTaskBtn: document.getElementById('cancel-add-task-btn'),
+
+// Edit Task Modal
+editTaskModal: document.querySelector('.edit-task-modal-window'),
+editTaskForm: document.getElementById('edit-task-form'),
+editTaskTitleInput: document.getElementById('edit-task-title-input'),
+editTaskDescInput: document.getElementById('edit-task-desc-input'),
+editSelectStatus: document.getElementById('edit-select-status'),
+
+// Additional elements (if needed or delete it)
+filterDiv: document.getElementById('filterDiv') // Assuming I will add an element for filtering
+
 }
 
 let activeBoard = ""
