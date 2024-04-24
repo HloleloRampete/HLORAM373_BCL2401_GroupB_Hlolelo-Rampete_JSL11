@@ -356,7 +356,7 @@ function saveTaskChanges(taskId) {
 
 
   // Update task using a hlper functoin
- 
+  putTask(taskId, task);
 
   // Close the modal and refresh the UI to reflect the changes
 
