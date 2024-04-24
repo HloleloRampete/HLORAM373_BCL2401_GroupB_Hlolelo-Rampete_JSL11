@@ -323,9 +323,20 @@ function openEditTaskModal(task) {
   });
 
   // Delete task using a helper function and close the task modal
-  deleteTaskBtn.addEventListener('click', () => toDeleteTask(task.id));
+  deleteTaskBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const taskTitle = document.getElementById('edit-task-title-input').value,
+    isConfimed = await confirm(`Delete ${taskTitle} task?`);
+
+
+    if(isConfimed){
+      deleteTask(task.id);
+      toggleModal(false, elements.editTaskModal);
+      refreshTasksUI();
+    }
+
+  });
   
-  toggleModal(true, elements.editTaskModal); // Show the edit task modal
 }
 
 function saveTaskChanges(taskId) {
