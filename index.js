@@ -181,7 +181,7 @@ function addTaskToUI(task) {
   if (!tasksContainer) {
     console.warn(`Tasks container not found for status: ${task.status}, creating one.`);
     tasksContainer = document.createElement('div');
-    tasksContainer.className = 'tasks-container';
+    tasksContainer.classList.add('tasks-container');
     column.appendChild(tasksContainer);
   }
 
