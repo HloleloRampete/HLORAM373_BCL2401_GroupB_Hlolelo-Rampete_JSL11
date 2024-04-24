@@ -157,6 +157,7 @@ function filterAndDisplayTasksByBoard(boardName) {
 
 function refreshTasksUI() {
   filterAndDisplayTasksByBoard(activeBoard);
+  showTasksProgress();
 }
 
 // Styles the active board by adding an active class
