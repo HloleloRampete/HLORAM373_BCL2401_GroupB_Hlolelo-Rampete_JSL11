@@ -4,6 +4,9 @@
 
 This task management system provides a user-friendly interface for organizing and tracking tasks. Users can add, edit, view details, and delete tasks with ease. The system features include a modal window for task editing, easy navigation between task statuses, and immediate UI updates reflecting changes made to tasks.
 
+### Project Presentation
+Link - https://www.loom.com/share/f17548e820314809bf4ee060fd6f0e83?sid=c59fcb82-cff4-48d9-b59d-167b9852385b
+
 ### Features
 
 1. **Task Interaction and Detail Management**
